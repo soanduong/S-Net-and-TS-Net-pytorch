@@ -58,7 +58,7 @@ If you find this work or code is helpful in your research, please cite:
 
 @article{Duong2020b,
    author = {Duong, S. T. M. and Phung, S. L. and Bouzerdoum, A. and Ang, S. P. and Schira, M. M.},
-   title = {Correcting susceptibility artifacts of MRI sensors in brain scanning: a 3D anatomy-guided deep learning approach,
+   title = {Correcting susceptibility artifacts of MRI sensors in brain scanning: a {3D} anatomy-guided deep learning approach,
    journal = {Sensors},
    volume = {21},
    pages = {1-16},
