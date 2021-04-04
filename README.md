@@ -6,7 +6,7 @@ This is the official code of [S-Net](https://www.sciencedirect.com/science/artic
 
 ## Quick start
 ### Install
-1. Install PyTorch=0.4.1 following the [official instructions](https://pytorch.org/)
+1. Install PyTorch=1.5.1 following the [official instructions](https://pytorch.org/)
 2. git clone https://github.com/soanduong/S-Net-and-TS-Net-pytorch
 3. Install dependencies: pip install -r requirements.txt
 
@@ -44,7 +44,14 @@ python iSAC_apply.py --config configs/snet_base.yml
 ````
 
 ## Citation
-If you find this work or code is helpful in your research, please cite:
+If you find this work or code is helpful in your research, please cite our paper:
+	* [S-Net](https://www.sciencedirect.com/science/article/abs/pii/S0730725X19307325?via%3Dihub):
+	Duong, S.T.M.; Phung, S.L.; Bouzerdoum, A.; Schira, M.M. An unsupervised deep learning technique for susceptibility artifact correction in reversed phase-encoding EPI mages. Magn. Reson. Imaging 2020, 71, 1–10
+	
+	* [TS-Net](https://www.mdpi.com/1424-8220/21/7/2314):
+	Duong, S.T.M.; Phung, S.L.; Bouzerdoum, A.; Ang, S.P.; Schira, M.M. Correcting Susceptibility Artifacts of MRI Sensors in Brain Scanning: A 3D Anatomy-Guided Deep Learning Approach. Sensors 2021, 21, 2314, 1-16.
+
+Bibtex
 ````
 @article{Duong2020b,
    author = {Duong, S. T. M. and Phung, S. L. and Bouzerdoum, A. and Schira, M. M.},
@@ -66,3 +73,6 @@ If you find this work or code is helpful in your research, please cite:
    type = {Journal Article}
 }
 ````
+
+## Acknowledgement
+* [voxelmorph](https://github.com/voxelmorph/voxelmorph): Learning-based image registration.

@@ -1,0 +1,31 @@
+name: "snet-aio-50epochs"    # name of this experiment. Used for comet-ml too
+tags: ['standard', 'training'] # for comet-ml
+gpu_id: '0'         # must set as a string, empty means using CPU
+seed: 50
+train_params:
+  dataset_dir: '/projects/datasets/UOW7TfMRI/'
+  train_txtfile: 'data/uow7Tfmri_train.dat' # text file containing the data path for training
+  test_txtfile: 'data/uow7Tfmri_test.dat'  # text file containing the data path for testing
+  pretrained_model: ''  # file path of the pretrained model
+  cut_off_scans: ''     # this option used for debuging only
+  batch_size: 4         # batch size in training the S-Net model
+  initial_epoch: 0      # initial epoch
+  n_epochs: 50          # number of epochs used in training
+  num_workers: 8        # number of workers used in training
+  early_stop: 20        # number of epochs
+
+optimizer:    # optimizer used to optimize the loss function
+  type: Adam
+  args:
+    lr: 0.0001
+
+sim_loss:     # similarity loss of the corrected image pair
+  type: 'lncc_loss'   # similarity loss function name
+  weights: 0.01       # weights of the smoothness loss
+
+model_params: # params for generating the S-Net model
+  n_dims: 3                       # dimensions of the data
+  n_displ_fields: 3               # dimensions of the displacement field
+  nf_enc: [16, 32, 32, 32]        # list of filters used in encoder
+  nf_dec: [32, 32, 32, 32, 8, 8]  # list of filters used in decoder
+  do_batchnorm: 1                 # 1 for using batch-normalization after each conv. layer
