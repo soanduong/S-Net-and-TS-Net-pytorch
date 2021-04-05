@@ -1,5 +1,5 @@
 # Deep learning technique for susceptibility artefact correction in reversed phase-encoding EPI images
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/TAMU-VITA/FasterSeg.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TAMU-VITA/FasterSeg/context:python) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/soanduong/S-Net-and-TS-Net-pytorch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/soanduong/S-Net-and-TS-Net-pytorch/context:python) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This is the official code of [S-Net](https://www.sciencedirect.com/science/article/abs/pii/S0730725X19307325?via%3Dihub) and [TS-Net](https://www.mdpi.com/1424-8220/21/7/2314) models for correcting susceptibility artefacts in reversed phase-encoding EPI images.
 
@@ -10,13 +10,25 @@ This is the official code of [S-Net](https://www.sciencedirect.com/science/artic
 2. git clone https://github.com/soanduong/S-Net-and-TS-Net-pytorch
 3. Install dependencies: pip install -r requirements.txt
 
+### Prepare data
+1. Download an example dataset [here].
+2. Prepare the text file for training and testing
+   Each line displays filename of a scan pair. A comma ", " is used to separate the two reversed-PE scans, for example:
+`
+    <filename_forward_PE_scan_pair_1>, <filename_forward_PE_scan_pair_1>, <filename_T1w_1> 
+    <filename_forward_PE_scan_pair_2>, <filename_forward_PE_scan_pair_2>, <filename_T1w_1>
+    ...
+    <filename_forward_PE_scan_pair_n>, <filename_forward_PE_scan_pair_n>, <filename_T1w_n>
+`
+    See and example [here](https://github.com/soanduong/S-Net-and-TS-Net-pytorch/tree/main/data/file_list.txt).
+    Note that the anatomy T1w images are required for training the TS-Net model.
+
 ### Train a model
 If you want to train and evaluate our models on your data.
-1. Data preparation
-2. Please specify the configuration file (refer to configs/snet_base.yml for a reference). Important fields are:
-    - dataset_dir: directory of the uncorrected images in txtfiles
-    - train_txtfile: file path of the text file that contains filenames of uncorrected image pairs for training
-    - test_txtfile: file path of the text file that contains filenames of uncorrected image pairs for testing
+1. Specify the configuration file (refer to configs/snet_base.yml for a reference). Important fields are:
+    - dataset_dir: directory of the uncorrected images
+    - train_txtfile: file path of the list of image filenames for training
+    - test_txtfile: file path of the list of image filenames for training
     - pretrained_model: file path of the pretrained model
     - batch_size: batch size in training the S-Net model
     - n_epochs: number of epochs used in training
@@ -26,13 +38,13 @@ If you want to train and evaluate our models on your data.
                       1 means only the displacement in the phase-encoding direction is estimated.
                       3 means displacements in all three dimensions are estimated.
    
-3. Run the training script
+2. Run the training script
 For example, train the S-Net on our sample dataset with batchsize of # on # GPUs:
 ````bash
 python iSAC_train.py --configs configs/snet_base.yml
 ````
 
-4. Apply the trained model
+### Apply the trained model
 For example, applying the trained model on the data in data/example_fmri with ...:
 ````bash
 python iSAC_apply.py --config configs/snet_base.yml

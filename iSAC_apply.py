@@ -9,7 +9,6 @@ import os
 import yaml
 import argparse
 import numpy as np
-from numpy import loadtxt
 
 # Third party imports
 import torch
@@ -84,7 +83,7 @@ if __name__ == '__main__':
     model = model.to(device)
 
     # Get image pairs from the text file
-    img_files = loadtxt(cmd_args.txtfile, delimiter=', ', dtype=np.str)
+    img_files = np.loadtxt(cmd_args.txtfile, delimiter=', ', dtype=np.str)
     # Implement the network for each pair of image
 
     # Configuring test dataloader

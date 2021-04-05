@@ -1,8 +1,6 @@
 import torch.nn as nn
 import torch
 import numpy as np
-import models
-from utils.general_utils import permute_data
 
 
 class SNet(nn.Module):
@@ -370,8 +368,8 @@ def interp(src_vol, loc_shifts, vol_size=None, interp_method="bilinear"):
     # permute the loc_shift into the form (batch, 1st_size, ..., nth_size, n)
     # to adapt the nn.functional.grid_sample() function
     if len(vol_size) == 2:
-        loc_shift = loc_shifts.permute(0, 2, 3, 1)  # size of (batch, Hout, Wout, 2)
-        loc_shift = loc_shift[..., [1, 0]]  # permute the two loc_shifts
+        loc_shifts = loc_shifts.permute(0, 2, 3, 1)  # size of (batch, Hout, Wout, 2)
+        loc_shifts = loc_shifts[..., [1, 0]]  # permute the two loc_shifts
     elif len(vol_size) == 3:
         loc_shifts = loc_shifts.permute(0, 2, 3, 4, 1)  # size of (batch, Dout, Hout, Wout, 3)
         loc_shifts = loc_shifts[..., [2, 1, 0]]  # permute the three loc_shifts

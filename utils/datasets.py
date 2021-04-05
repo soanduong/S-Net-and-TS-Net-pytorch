@@ -5,11 +5,7 @@ Created on 24/06/2020 1:26 pm
 @author: Soan Duong, UOW
 """
 # Standard library imports
-import os
-import glob
-import pickle
 import numpy as np
-from numpy import loadtxt
 import torch
 import nibabel as nib
 from torch.utils.data import Dataset
@@ -84,7 +80,7 @@ class SNetDataset(Dataset):
         super(SNetDataset, self).__init__()
         self.training_file = training_file
         self.root_dir = root_dir
-        self.scan_pairs = loadtxt(training_file, dtype=np.str, comments="#", delimiter=";", unpack=False)
+        self.scan_pairs = np.loadtxt(training_file, dtype=np.str, comments="#", delimiter=";", unpack=False)
 
     def __len__(self):
         """
@@ -165,7 +161,7 @@ if __name__ == "__main__":
     training_file = 'data/datasets/%s_train.dat' % dataset_name
     ubuntu_dir = '/data/DLSAC/data/'
     pc_dir = 'Z:/projects/DLSAC/'
-    scan_pairs = loadtxt(training_file, dtype=np.str, comments="#", delimiter=";", unpack=False)
+    scan_pairs = np.loadtxt(training_file, dtype=np.str, comments="#", delimiter=";", unpack=False)
 
     scan = scan_pairs[1]
     pe_dir = np.int(scan[2].strip())
