@@ -231,6 +231,4 @@ def show_visual_results(x_fwd, x_inv, y_fwd, y_inv, disp_fields, show_visual=0,
 
 
 if __name__ == '__main__':
-    get_experiment_dataloaders('/projects/datasets/UOW7TfMRI',
-                               '../data/uow7Tfmri_train.dat',
-                               '../data/uow7Tfmri_test.dat')
+    print(prepare_device(n_gpu_use=1))
