@@ -15,15 +15,15 @@ This is the official code of [S-Net](https://www.sciencedirect.com/science/artic
 2. Prepare the text file for training and testing
    Each line displays filename of a scan pair. A comma ", " is used to separate the two reversed-PE scans, for example:
    
-`
+````
     <filename_forward_PE_scan_pair_1>, <filename_forward_PE_scan_pair_1>, <filename_T1w_1> 
-    <filename_forward_PE_scan_pair_2>, <filename_forward_PE_scan_pair_2>, <filename_T1w_1>
+    
+    <filename_forward_PE_scan_pair_2>, <filename_forward_PE_scan_pair_2>, <filename_T1w_2>
     ...
     <filename_forward_PE_scan_pair_n>, <filename_forward_PE_scan_pair_n>, <filename_T1w_n>
-`
-
-    See and example [here](https://github.com/soanduong/S-Net-and-TS-Net-pytorch/tree/main/data/file_list.txt).
-    Note that the anatomy T1w images are required for training the TS-Net model.
+````
+See and example [here](https://github.com/soanduong/S-Net-and-TS-Net-pytorch/tree/main/data/file_list.txt).
+Note that the anatomy T1w images are required for training the TS-Net model.
 
 ### Train a model
 If you want to train and evaluate our models on your data.
