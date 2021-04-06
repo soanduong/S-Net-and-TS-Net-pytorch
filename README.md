@@ -1,5 +1,5 @@
 # Deep learning technique for susceptibility artefact correction in reversed phase-encoding EPI images
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/soanduong/S-Net-and-TS-Net-pytorch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/soanduong/S-Net-and-TS-Net-pytorch/context:python) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This is the official code of [S-Net](https://www.sciencedirect.com/science/article/abs/pii/S0730725X19307325?via%3Dihub) and [TS-Net](https://www.mdpi.com/1424-8220/21/7/2314) models for correcting susceptibility artefacts in reversed phase-encoding EPI images.
 
