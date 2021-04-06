@@ -11,8 +11,9 @@ This is the official code of [S-Net](https://www.sciencedirect.com/science/artic
 3. Install dependencies: pip install -r requirements.txt
 
 ### Prepare data
-1. Download an example dataset [here].
-2. Prepare the text file for training and testing
+1. Download an example reversed-PE DWI pair [here](https://drive.google.com/drive/folders/1lXnTISmq2cwO5mVHXG9iKZCOiDhwju51?usp=sharing).
+2. Save the image pair in your folder, e.g. `data`.
+3. Prepare the text file for training and testing
    Each line displays filename of a scan pair. A comma ", " is used to separate the two reversed-PE scans, for example:
    
 ````
