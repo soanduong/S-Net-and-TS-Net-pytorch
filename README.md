@@ -44,7 +44,7 @@ If you want to train and evaluate our models on your data.
 2. Run the training script
 For example, train the S-Net on our sample dataset with batchsize of # on # GPUs:
 ````bash
-python iSAC_train.py --configs configs/snet_base.yml
+python iSAC_train.py --config configs/snet_base.yml
 ````
 
 ### Apply the trained model
