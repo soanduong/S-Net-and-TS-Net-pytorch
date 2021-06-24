@@ -4,3 +4,4 @@ numpy==1.16.4
 PyYAML==5.4.1
 torch==1.5.1+cpu
 tqdm==4.54.1
+comet-ml==3.12.1
