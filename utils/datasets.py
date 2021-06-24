@@ -22,7 +22,7 @@ class SACDataset(Dataset):
         super(SACDataset, self).__init__()
         self.training_file = txtfile
         self.root_dir = root_dir
-        self.scan_pairs = loadtxt(txtfile, dtype=np.str, comments="#", delimiter=", ", unpack=False)
+        self.scan_pairs = np.loadtxt(txtfile, dtype=np.str, comments="#", delimiter=", ", unpack=False)
 
         # Check if having only one image pair
         if isinstance(self.scan_pairs[0], str):
