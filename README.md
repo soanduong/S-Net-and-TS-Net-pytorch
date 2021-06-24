@@ -23,7 +23,7 @@ This is the official code of [S-Net](https://www.sciencedirect.com/science/artic
     ...
     <filename_forward_PE_scan_pair_n>, <filename_forward_PE_scan_pair_n>, <filename_T1w_n>
 ````
-See and example [here](https://github.com/soanduong/S-Net-and-TS-Net-pytorch/tree/main/data/file_list.txt).
+See an example of the text file [here](https://github.com/soanduong/S-Net-and-TS-Net-pytorch/tree/main/data/file_list.txt).
 Note that the anatomy T1w images are required for training the TS-Net model.
 
 ### Train a model
